@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 'ON');
+error_reporting(E_ALL);
 require 'db.php';
 session_start();
 
@@ -13,7 +15,7 @@ if ($result->num_rows > 0)
 	{
         echo "<br> Source: " . $row['account_num'] . 
 				"<br> Amount: " . $row['amount'] . 
-				"<br> Destination: " . $row['account_dest'] . 
+				"<br> Destination: " . $row['account_dest'] .
 				"<br> Dest user name: " . $row['login'] . 
 				"<br> Title: " . $row['title'] . "<br>";
     }
@@ -23,3 +25,13 @@ else
     echo "0 results";
 }
 ?>
+
+<!--script>
+	var tonumberTab = document.getElementsByName("dest");
+	var tab1 = localStorage.getItem("tab1").split(",");
+	var i;
+	for(i=0; i<tab1.length; i++)
+	{
+		tonumberTab[i].innerText = tab1[i];
+	}
+</script-->
